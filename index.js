@@ -5,6 +5,18 @@ const button = document.querySelector('#check');
 const space=document.querySelector('#content');
 var resultImg = document.createElement('img');
 resultImg.className = "resultImg";
+document.querySelector('.main-link').addEventListener('click', function(event) {
+  event.preventDefault();
+
+
+  const target = document.querySelector('#content');
+  const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
+  window.scrollTo({
+      top: targetPosition,
+      behavior: 'smooth'
+  });
+});
+
 
 button.addEventListener("click", function () {
   if (date.value === "" || number.value === "") {
